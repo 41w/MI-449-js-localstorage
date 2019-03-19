@@ -1,16 +1,14 @@
 var changeTheme = function () {
   var theme = window.localStorage.getItem('theme')
   if (theme === null) {
-    document.body.setAttribute('class', 'day')
+    theme = 'night'
+  }
+  if (theme === 'day') {
+    document.body.setAttribute('class', theme)
     window.localStorage.setItem('theme', 'night')
   } else {
-    if (theme === 'day') {
-      document.body.setAttribute('class', theme)
-      window.localStorage.setItem('theme', 'night')
-    } else {
-      document.body.setAttribute('class', theme)
-      window.localStorage.setItem('theme', 'day')
-    }
+    document.body.setAttribute('class', theme)
+    window.localStorage.setItem('theme', 'day')
   }
 }
 
